@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.thetransactioncompany.jsonrpc2</groupId>
+    <groupId>jp.livlog.jsonrpc2</groupId>
     <artifactId>jsonrpc2client</artifactId>
-    <version>1.7.2</version>
+    <version>2.0.0</version>
     <packaging>jar</packaging>
     <name>jsonrpc2client</name>
 
@@ -12,31 +12,25 @@
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.3</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <encoding>UTF-8</encoding>
+                    <release>11</release>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
                 <executions>
                     <execution>
-                        <phase>initialize</phase>
+                        <phase>compile</phase>
                         <goals>
-                            <goal>resources</goal>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -138,17 +132,24 @@
     </profiles>
 
     <dependencies>
+<!-- 
          <dependency>
           <groupId>com.thetransactioncompany.jsonrpc2</groupId>
           <artifactId>jsonrpc2base</artifactId>
           <version>1.26.1</version>
           <scope>compile</scope>
          </dependency>
+-->         
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>jsonrpc2-base</artifactId>
+            <version>2.0</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -1,4 +1,4 @@
-package com.thetransactioncompany.jsonrpc2.client;
+package jp.livlog.jsonrpc2.client;
 
 
 /**
