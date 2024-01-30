@@ -17,7 +17,7 @@
     <scm>
         <url>https://github.com/cotogoto/jsonrpc2-client</url>
         <connection>scm:git:git@github.com:cotogoto/jsonrpc2-client.git</connection>
-      <tag>HEAD</tag>
+      <tag>v2.0.1</tag>
   </scm>
 
     <build>
