@@ -4,9 +4,21 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jp.livlog.jsonrpc2</groupId>
     <artifactId>jsonrpc2client</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>jsonrpc2client</name>
+
+    <distributionManagement>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </distributionManagement>
+
+    <scm>
+        <url>https://github.com/cotogoto/jsonrpc2-client</url>
+        <connection>scm:git:git@github.com:cotogoto/jsonrpc2-client.git</connection>
+    </scm>
 
     <build>
 
@@ -64,6 +76,31 @@
                     <excludes>
                         <exclude>**/suites/*Integration*.java</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <!-- リリースバージョンの指定 -->
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>release</releaseProfiles>
+                    <goals>deploy</goals>
+                    <!-- SCMコメントの設定 -->
+                    <scmCommentPrefix>[Release]</scmCommentPrefix>
+                    <!-- スナップショットバージョンの自動インクリメント -->
+                    <preparationGoals>clean verify</preparationGoals>
                 </configuration>
             </plugin>
 
@@ -132,14 +169,14 @@
     </profiles>
 
     <dependencies>
-<!-- 
+<!--
          <dependency>
           <groupId>com.thetransactioncompany.jsonrpc2</groupId>
           <artifactId>jsonrpc2base</artifactId>
           <version>1.26.1</version>
           <scope>compile</scope>
          </dependency>
--->         
+-->
         <dependency>
             <groupId>com.thetransactioncompany</groupId>
             <artifactId>jsonrpc2-base</artifactId>
