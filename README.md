@@ -22,6 +22,32 @@ Provides a client-side class for dispatching requests and notifications to a JSO
 - Java 11 or later
 - The JSON-RPC 2.0 Base package `com.thetransactioncompany.jsonrpc2` to represent, serialise and parse JSON-RPC 2.0 messages. Available from [http://software.dzhuvinov.com/json-rpc-2.0-base.html](http://software.dzhuvinov.com/json-rpc-2.0-base.html)
 
+### Download
+Latest Version:
+[![](https://jitpack.io/v/cotogoto/jsonrpc2-client.svg)](https://jitpack.io/#cotogoto/jsonrpc2-client)
+
+Be sure to replace the **VERSION** key below with the latest version shown above!
+
+Maven
+```xml
+<dependency>
+    <groupId>com.github.blue-islands</groupId>
+    <artifactId>Program-JB</artifactId>
+    <version>VERSION</version>
+</dependency>
+<dependency>
+    <groupId>com.github.cotogoto</groupId>
+    <artifactId>jsonrpc2-client</artifactId>
+    <version>VERSION</version>
+</dependency>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
 ### Package content:
 
 - `README.txt`                    This file.
