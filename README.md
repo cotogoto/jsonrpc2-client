@@ -31,11 +31,6 @@ Be sure to replace the **VERSION** key below with the latest version shown above
 Maven
 ```xml
 <dependency>
-    <groupId>com.github.blue-islands</groupId>
-    <artifactId>Program-JB</artifactId>
-    <version>VERSION</version>
-</dependency>
-<dependency>
     <groupId>com.github.cotogoto</groupId>
     <artifactId>jsonrpc2-client</artifactId>
     <version>VERSION</version>
