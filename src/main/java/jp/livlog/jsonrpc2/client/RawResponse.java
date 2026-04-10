@@ -3,6 +3,7 @@ package jp.livlog.jsonrpc2.client;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 
@@ -84,7 +85,7 @@ public class RawResponse {
 		// read the response content, throws IO exception
 		StringBuilder responseText = new StringBuilder();
 
-		BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
 
 		String line;
 		while ((line = input.readLine()) != null) {
@@ -175,7 +176,7 @@ public class RawResponse {
 
 		List <String> values = headers.get(name);
 
-		if (values == null | values.size() <= 0)
+		if (values == null || values.isEmpty())
 			return null;
 
 		return values.get(0);
