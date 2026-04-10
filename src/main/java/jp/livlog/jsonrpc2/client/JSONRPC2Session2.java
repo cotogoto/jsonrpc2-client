@@ -195,7 +195,7 @@ public class JSONRPC2Session2 {
         };
 
         try {
-            final var sc = SSLContext.getInstance("SSL");
+            final var sc = SSLContext.getInstance("TLS");
             sc.init(null, trustAllCerts, new SecureRandom());
             return sc.getSocketFactory();
 
